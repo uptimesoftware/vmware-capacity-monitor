@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uptime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="5.0" target_grouping="other">
+    <class>Vmware Capacity Monitor</class>
+    <exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
+    <erdc_version>0.1</erdc_version>
+    <category>Advanced and Script Monitors</category>
+    <grid_info>
+        <supported_versions>7.3</supported_versions>
+        <supported_platforms>windows, linux</supported_platforms>
+        <upgrade_in_place>true</upgrade_in_place>
+        <requires_agent_scripts>false</requires_agent_scripts>
+    </grid_info>
+    <elements>
+        <element name="process_linux" parameter_type="input" data_type="string" gui_basic="1" range_type="0" hidden="true">
+            <control_options> size:40 </control_options>
+            <default_value>plugins/scripts/vmware-capacity-monitor/monitor.sh</default_value>
+            <short_description>Script Name</short_description>
+            <long_description>Name of the script/binary/process to be executed by up.time </long_description>
+            <validation_rule>
+                <alphanumeric/>
+            </validation_rule>
+            <error_message>
+                <alphanumeric>required field</alphanumeric>
+            </error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+        <element name="process_windows" parameter_type="input" data_type="string" gui_basic="1" range_type="0" hidden="true">
+            <control_options> size:40 </control_options>
+            <default_value>plugins/scripts/vmware-capacity-monitor/monitor.bat</default_value>
+            <short_description>Script Name</short_description>
+            <long_description>Name of the script/binary/process to be executed by up.time </long_description>
+            <validation_rule>
+                <alphanumeric/>
+            </validation_rule>
+            <error_message>
+                <alphanumeric>required field</alphanumeric>
+            </error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+        <element name="months_of_data" parameter_type="input" data_type="integer" gui_basic="1" range_type="0" hidden="true">
+            <control_options> size:40 </control_options>
+            <default_value>3</default_value>
+            <short_description>Months of Data</short_description>
+            <long_description>How many months of data are we basing our usage stats on?</long_description>
+            <validation_rule>
+                <integer/>
+            </validation_rule>
+            <error_message>
+            </error_message>
+            <gui_type>
+                <integer/>
+            </gui_type>
+        </element>
+        <element name="capacity_buffer" parameter_type="input" data_type="integer" gui_basic="1" range_type="0" hidden="true">
+            <control_options> size:40 </control_options>
+            <default_value>100</default_value>
+            <short_description>Capacity Buffer (%)</short_description>
+            <long_description>% of Capacity</long_description>
+            <validation_rule>
+                <integer/>
+            </validation_rule>
+            <error_message>
+            </error_message>
+            <gui_type>
+                <integer/>
+            </gui_type>
+        </element>
+        <element name="metric_type" parameter_type="input" data_type="string" gui_basic="1" range_type="0" hidden="true">
+            <control_options> size:8 </control_options>
+            <default_value>3</default_value>
+            <short_description>Based on the daily what?</short_description>
+            <long_description>What are we basing our usage value on?</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                    <single_select type="dropdown">
+                        <value>Max</value>
+                        <value>Avg</value>
+                        <value>Min</value>
+                </single_select>
+            </gui_type>
+        </element>
+        <element name="total_cap" parameter_type="output" data_type="integer" gui_basic="0"
+            range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Total Capacity</short_description>
+            <long_description>Total Capacity</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <integer/>
+            </gui_type>
+        </element>
+        <element name="used_cap" parameter_type="output" data_type="integer" gui_basic="0"
+            range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Used Capacity</short_description>
+            <long_description>Used Capacity</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <integer/>
+            </gui_type>
+        </element>
+        <element name="avail_cap" parameter_type="output" data_type="integer" gui_basic="0"
+            range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Avialable Capacity</short_description>
+            <long_description>Available Capacity</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <integer/>
+            </gui_type>
+        </element>
+        <element name="delta_cap" parameter_type="output" data_type="integer" gui_basic="0"
+            range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Capacity Delta</short_description>
+            <long_description>Capacity Delta</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <integer/>
+            </gui_type>
+        </element>
+        <element name="time_till_real_cap" parameter_type="output" data_type="decimal" gui_basic="0"
+            range_type="0" units="months">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Time to Fill Real Capacity</short_description>
+            <long_description>Number of Months remaining till usage hits real capacity</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <decimal/>
+            </gui_type>
+        </element>
+        <element name="time_till_buffered_cap" parameter_type="output" data_type="decimal" gui_basic="0"
+            range_type="0" units="months">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Time to Fill Buffered Capacity</short_description>
+            <long_description>Number of Months remaining till usage hits buffered capacity</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <decimal/>
+            </gui_type>
+        </element>
+        <element name="timer" parameter_type="output" data_type="integer" gui_basic="0"
+            range_type="0" units="ms">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Response time</short_description>
+            <long_description>Response time in ms</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <integer/>
+            </gui_type>
+        </element>
+    </elements>
+    <help>Monitor and alert on the remaining capacity within VMWare Infrastructure</help>
+</uptime>
