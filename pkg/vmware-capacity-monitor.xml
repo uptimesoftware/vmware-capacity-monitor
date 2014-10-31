@@ -3,7 +3,7 @@
     <class>Vmware Capacity Monitor</class>
     <exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
     <erdc_version>0.1</erdc_version>
-    <category>Advanced and Script Monitors</category>
+    <category>VMware Monitors</category>
     <grid_info>
         <supported_versions>7.3</supported_versions>
         <supported_platforms>windows, linux</supported_platforms>
@@ -41,7 +41,7 @@
                 <string/>
             </gui_type>
         </element>
-        <element name="months_of_data" parameter_type="input" data_type="integer" gui_basic="1" range_type="0" hidden="true">
+        <element name="months_of_data" parameter_type="input" data_type="integer" gui_basic="1" range_type="0">
             <control_options> size:40 </control_options>
             <default_value>3</default_value>
             <short_description>Months of Data</short_description>
@@ -55,7 +55,7 @@
                 <integer/>
             </gui_type>
         </element>
-        <element name="capacity_buffer" parameter_type="input" data_type="integer" gui_basic="1" range_type="0" hidden="true">
+        <element name="capacity_buffer" parameter_type="input" data_type="integer" gui_basic="1" range_type="0" >
             <control_options> size:40 </control_options>
             <default_value>100</default_value>
             <short_description>Capacity Buffer (%)</short_description>
@@ -69,7 +69,7 @@
                 <integer/>
             </gui_type>
         </element>
-        <element name="metric_type" parameter_type="input" data_type="string" gui_basic="1" range_type="0" hidden="true">
+        <element name="metric_type" parameter_type="input" data_type="string" gui_basic="1" range_type="0">
             <control_options> size:8 </control_options>
             <default_value>3</default_value>
             <short_description>Based on the daily what?</short_description>
