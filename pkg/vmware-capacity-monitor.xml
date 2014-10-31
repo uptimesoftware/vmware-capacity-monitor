@@ -147,7 +147,7 @@
             </gui_type>
         </element>
         <element name="time_till_real_cap" parameter_type="output" data_type="decimal" gui_basic="0"
-            range_type="0" units="months">
+            range_type="0" units="days">
             <control_options>size:8</control_options>
             <default_value/>
             <short_description>Time to Fill Real Capacity</short_description>
@@ -159,7 +159,7 @@
             </gui_type>
         </element>
         <element name="time_till_buffered_cap" parameter_type="output" data_type="decimal" gui_basic="0"
-            range_type="0" units="months">
+            range_type="0" units="days">
             <control_options>size:8</control_options>
             <default_value/>
             <short_description>Time to Fill Buffered Capacity</short_description>
