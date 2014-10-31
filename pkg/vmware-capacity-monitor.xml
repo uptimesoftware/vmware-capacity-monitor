@@ -84,6 +84,20 @@
                 </single_select>
             </gui_type>
         </element>
+        <element name="query_type" parameter_type="input" data_type="string" gui_basic="1" range_type="0">
+            <control_options> size:8 </control_options>
+            <default_value>3</default_value>
+            <short_description>Based on what Metric</short_description>
+            <long_description>Mem or Cpu?</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                    <single_select type="dropdown">
+                        <value>Mem</value>
+                        <value>Cpu</value>
+                </single_select>
+            </gui_type>
+        </element>
         <element name="total_cap" parameter_type="output" data_type="integer" gui_basic="0"
             range_type="0" units="">
             <control_options>size:8</control_options>
