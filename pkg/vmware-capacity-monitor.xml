@@ -3,7 +3,7 @@
     <class>Vmware Capacity Monitor</class>
     <exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
     <erdc_version>0.1</erdc_version>
-    <category>VMware Monitors</category>
+    <category>VM Monitors</category>
     <grid_info>
         <supported_versions>7.3,7.5,7.6,7.7,7.8,7.9</supported_versions>
         <supported_platforms>windows, linux</supported_platforms>
