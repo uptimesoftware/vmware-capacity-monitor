@@ -5,7 +5,8 @@
                 "7.6",
 				"7.7",
 				"7.8",
-				"7.9"
+				"7.9",
+        		"7.10"
         ],
         "name": "VMware Capacity Monitor",
         "git_file_target": "https://github.com/uptimesoftware/vmware-capacity-monitor/raw/master/dist/vmware-capacity-monitor.zip",
